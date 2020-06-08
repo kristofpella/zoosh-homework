@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Live demo can be found here:
-[Zoosh homework](https://github.com/facebook/https://zoosh-homework.onrender.com/)
+[Zoosh homework](https://zoosh-homework.onrender.com/)
 
 ## Installation
 
