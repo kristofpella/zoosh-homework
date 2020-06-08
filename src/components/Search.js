@@ -36,9 +36,7 @@ const Search = () => {
     event.preventDefault();
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleSubmit = (event) => {
     if (queryString === "") {
       alert("Type a title to search for it");
       return false;
@@ -51,6 +49,7 @@ const Search = () => {
 
     setLastQuery(queryString);
     fetchMovies(queryString);
+    event.preventDefault();
   };
 
   return (
