@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useStoreActions } from "easy-peasy";
 
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-
+import { Box, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const CONSTANTS = {
@@ -22,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
 }));
 
 const Search = () => {
@@ -37,7 +32,6 @@ const Search = () => {
     const {
       target: { value },
     } = event;
-    console.log(event.target.value);
     setQueryString(value);
     event.preventDefault();
   };
@@ -60,7 +54,7 @@ const Search = () => {
   };
 
   return (
-    <div className={classes.paper}>
+    <Box className={classes.paper}>
       <form className={classes.form} noValidate onSubmit={handleSubmit}>
         <TextField
           variant="outlined"
@@ -81,7 +75,7 @@ const Search = () => {
           {CONSTANTS.cta}
         </Button>
       </form>
-    </div>
+    </Box>
   );
 };
 

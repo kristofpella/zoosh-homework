@@ -2,8 +2,8 @@ import {
   TMDB_API_KEY,
   TMDB_BASE_URL,
   TMDB_SEARCH_URL,
-  wikipediaFetchUrl,
-  wikipediaSearchUrl,
+  WIKIPEDIA_FETCH_URL,
+  WIKIPEDIA_SEARCH_URL,
 } from "../constants";
 
 async function fetchMovieIMDBId(movieId) {
@@ -28,7 +28,7 @@ export async function fetchMovies(query) {
 export async function fetchMovieFromWikipedia(movie) {
   // We perform the the search in Wikipedia pages based on the IMDB movie title
   const searchQuery = encodeURIComponent(`${movie.title} ${movie.year}`);
-  const searchUrl = `${wikipediaSearchUrl}${searchQuery}`;
+  const searchUrl = `${WIKIPEDIA_SEARCH_URL}${searchQuery}`;
   const {
     query: { search },
   } = await fetch(searchUrl).then((res) => res.json());
@@ -37,7 +37,7 @@ export async function fetchMovieFromWikipedia(movie) {
   const bestSearchResult = search[0];
 
   // We perform the fetch of the movie based on the exact Wikipedia title of the movie
-  const fetchUrl = `${wikipediaFetchUrl}${encodeURIComponent(
+  const fetchUrl = `${WIKIPEDIA_FETCH_URL}${encodeURIComponent(
     bestSearchResult.title
   )}`;
 
